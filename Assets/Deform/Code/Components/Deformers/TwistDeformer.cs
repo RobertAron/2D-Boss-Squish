@@ -10,7 +10,6 @@ namespace Deform.Deformers
 
 		private Matrix4x4 axisSpace;
 		private Matrix4x4 inverseAxisSpace;
-		private TransformData axisCache;
 
 		public override void PreModify ()
 		{
@@ -24,7 +23,6 @@ namespace Deform.Deformers
 				axis.Rotate (-90f, 0f, 0f);
 			}
 
-			axisCache = new TransformData (axis);
 
 			axisSpace = Matrix4x4.TRS (Vector3.zero, Quaternion.Inverse (axis.rotation) * transform.rotation, Vector3.one);
 			inverseAxisSpace = axisSpace.inverse;

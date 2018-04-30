@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 1f;
     public float timeToMaxSpeed = 0.1f;
 
-    private Rigidbody rigidbody;
+    private Rigidbody rb;
 
     private Vector2 goalVelocity;
     private Vector2 curentVelocityRef;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         goalVelocity.Normalize();
         goalVelocity *= speed;
-        rigidbody.velocity = Vector2.SmoothDamp(rigidbody.velocity, goalVelocity, ref curentVelocityRef, timeToMaxSpeed, float.MaxValue, Time.deltaTime);
+        rb.velocity = Vector2.SmoothDamp(rb.velocity, goalVelocity, ref curentVelocityRef, timeToMaxSpeed, float.MaxValue, Time.deltaTime);
     }
     public void MoveHorizontal(float amount)
     {

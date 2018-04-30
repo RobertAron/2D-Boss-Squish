@@ -13,7 +13,6 @@ namespace Deform.Deformers
 		public Transform axis;
 		public Sin sin = new Sin () { frequency = 1f, amplitude = 0.2f };
 
-		private TransformData axisCache;
 		private float speedOffset;
 		private float finalOffset;
 		private Matrix4x4 axisSpace;
@@ -32,7 +31,6 @@ namespace Deform.Deformers
 				axis.Rotate (-90f, 0f, 0f);
 			}
 
-			axisCache = new TransformData (axis);
 
 			speedOffset += (Manager.SyncedDeltaTime * speed) / sin.frequency;
 			finalOffset = speedOffset + ((sin.frequency != 0f) ? offset / sin.frequency : 0f);

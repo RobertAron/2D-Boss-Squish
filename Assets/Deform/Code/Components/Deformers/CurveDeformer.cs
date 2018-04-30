@@ -60,9 +60,5 @@ namespace Deform.Deformers
 
 			return vertexData;
 		}
-		public void setCurvePoint(float curveCenter)
-		{
-			curve = new AnimationCurve(new Keyframe(0f,1f),new Keyframe(curveCenter,1f),new Keyframe(1f,1f));
-		}
 	}
 }

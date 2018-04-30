@@ -7,21 +7,21 @@ public class SquishBasedSpeed : MonoBehaviour {
 
 	public float velocityWeight=1;
 
-	private Transform transform;
-	private Rigidbody rigidbody;	
+	private Transform tf;
+	private Rigidbody rb;	
 
 	void Start()
 	{
-		transform = GetComponent<Transform>();
-		rigidbody = GetComponent<Rigidbody>();
+		tf = GetComponent<Transform>();
+		rb = GetComponent<Rigidbody>();
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
-		Vector2 currentVelocity = rigidbody.velocity;
-		transform.rotation = Quaternion.Euler(0,0,Mathf.Atan2(currentVelocity.y,currentVelocity.x)*Mathf.Rad2Deg);
+		Vector2 currentVelocity = rb.velocity;
+		tf.rotation = Quaternion.Euler(0,0,Mathf.Atan2(currentVelocity.y,currentVelocity.x)*Mathf.Rad2Deg);
 		float stretch =  Mathf.Abs(currentVelocity.magnitude)*velocityWeight+1;
-		transform.localScale = new Vector3(stretch,1,1);
+		tf.localScale = new Vector3(stretch,1,1);
 	}
 }
