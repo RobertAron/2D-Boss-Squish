@@ -5,20 +5,17 @@ using UnityEngine.Events;
 
 
 [System.Serializable]
-public class InputAxisEvent : UnityEvent<float> { }
+public class InputEvent : UnityEvent<Vector3> { }
 
 public class InputCapture : MonoBehaviour
 {
 
-    private static string horizontalAxis = "Horizontal";
-    private static string verticalAxis = "Vertical";
-
-    public InputAxisEvent onHorizontalInputAxis = new InputAxisEvent();
-    public InputAxisEvent onVerticalInputAxis = new InputAxisEvent();
+    public InputEvent onMouseReleasedEvent = new InputEvent();
+    public InputEvent onMouseDownEvent = new InputEvent();
     // Update is called once per frame
     void Update()
     {
-        onHorizontalInputAxis.Invoke(Input.GetAxisRaw(horizontalAxis));
-        onVerticalInputAxis.Invoke(Input.GetAxisRaw(verticalAxis));
+        if(Input.GetMouseButtonUp(0)) onMouseReleasedEvent.Invoke(Input.mousePosition);
+        if(Input.GetMouseButton(0)) onMouseDownEvent.Invoke(Input.mousePosition);
     }
 }
