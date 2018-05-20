@@ -12,8 +12,8 @@ public class SquishBasedSpeed : MonoBehaviour {
 
 	void Start()
 	{
-		tf = GetComponent<Transform>();
-		rb = GetComponent<Rigidbody>();
+		tf = transform.GetComponentInParent<Transform>();
+		rb = transform.GetComponentInParent<Rigidbody>();
 	}
 
 	// Update is called once per frame

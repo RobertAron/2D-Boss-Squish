@@ -93,11 +93,14 @@
      <Compile Include="Assets\Deform\Plugins\AsyncAwaitUtil\Source\WaitForBackgroundThread.cs" />
      <Compile Include="Assets\Deform\Plugins\AsyncAwaitUtil\Source\WaitForUpdate.cs" />
      <Compile Include="Assets\Scripts\BossStruck.cs" />
+     <Compile Include="Assets\Scripts\FakeGravity.cs" />
+     <Compile Include="Assets\Scripts\Force2D.cs" />
      <Compile Include="Assets\Scripts\ForceConstantOrientation.cs" />
      <Compile Include="Assets\Scripts\InputCapture.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\PlayerControllerPoint.cs" />
      <Compile Include="Assets\Scripts\SquishBasedSpeed.cs" />
+     <Compile Include="Assets\Scripts\StickToWall.cs" />
+     <Compile Include="Assets\Scripts\TrackMovement.cs" />
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>

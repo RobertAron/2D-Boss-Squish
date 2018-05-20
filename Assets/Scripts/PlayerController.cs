@@ -7,11 +7,12 @@ public class PlayerController : MonoBehaviour
 
 
     public float speed = 1f;
-    public float dampenTime = 3f;
+    private Vector3 fakeGravity = new Vector3(0,0,0);
 
     private Rigidbody rb;
     private Vector2 rest = new Vector2(0f,0f);
     private Vector2 curentVelocityRef;
+    private FakeGravity fg;
 
 	private int clickableArea;
     private const float CAM_RAY_LENGTH = 100f;
@@ -26,13 +27,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         aimLine = aimEffect.GetComponent<LineRenderer>();
         clickableArea = LayerMask.GetMask("2D Plane");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // Debug.Log(rb.velocity);
-        // rb.velocity = Vector2.SmoothDamp(rb.velocity, rest, ref curentVelocityRef, dampenTime, float.MaxValue, Time.deltaTime);
+        fg = GetComponent<FakeGravity>();
     }
     public void drawDirectionLine(Vector3 mouseLocation)
     {
@@ -52,8 +47,13 @@ public class PlayerController : MonoBehaviour
         if(Physics.Raycast(camRay,out floorHit,CAM_RAY_LENGTH,clickableArea))
         {
             Vector3 directionVector = floorHit.point - transform.position;
-            Debug.Log(directionVector.normalized*speed);
             rb.velocity = directionVector.normalized*speed;
+            fg.setGravity(directionVector.normalized);
         }
+    }
+
+    void Update()
+    {
+        rb.velocity += fakeGravity*speed*0.1f;
     }
 }

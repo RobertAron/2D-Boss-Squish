@@ -47,7 +47,6 @@ public class BossStruck : MonoBehaviour {
 		deformedTransformAxis.rotation = Quaternion.Euler(Mathf.Atan2(hitDirection.y*-1,hitDirection.x)*Mathf.Rad2Deg-90,90,0);
 		Vector3 centerToHitPositionAxis = hitPosition-bossInitPosition;
 		float angleStruck = Vector3.Angle(centerToHitPositionAxis.normalized,deformedTransformAxis.rotation * Vector3.back);
-		Debug.Log(angleStruck);
 		if(angleStruck<60){
 			bossDeform.curve = new AnimationCurve(new Keyframe(0f,0f), new Keyframe(1f,1f));
 		}else if(angleStruck>120){
