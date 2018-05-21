@@ -18,7 +18,6 @@ public class StickToWall : MonoBehaviour
         GameObject otherObj = other.gameObject;
         if (otherObj.CompareTag("Wall"))
         {
-			Debug.Log("change!");
             Vector3 pos = otherObj.transform.position;
             if (pos.x > 1) fg.setGravity(new Vector3(1, 0, 0));
             else if (pos.x < -1) fg.setGravity(new Vector3(-1, 0, 0));

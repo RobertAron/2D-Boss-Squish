@@ -101,6 +101,7 @@
      <Compile Include="Assets\Scripts\SquishBasedSpeed.cs" />
      <Compile Include="Assets\Scripts\StickToWall.cs" />
      <Compile Include="Assets\Scripts\TrackMovement.cs" />
+     <Compile Include="Assets\Scripts\Watching.cs" />
  <Reference Include="Vuforia.UnityExtensions.Editor">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/VuforiaSupport/Managed/Editor/Vuforia.UnityExtensions.Editor.dll</HintPath>
  </Reference>

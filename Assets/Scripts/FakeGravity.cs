@@ -20,6 +20,5 @@ public class FakeGravity : MonoBehaviour {
 	public void setGravity(Vector3 gravity)
 	{
 		this.gravity = gravity.normalized*2;
-		Debug.Log("NEW SET" + gravity);
 	}
 }

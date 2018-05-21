@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
 
 
     public float speed = 1f;
-    private Vector3 fakeGravity = new Vector3(0,0,0);
 
     private Rigidbody rb;
     private Vector2 rest = new Vector2(0f,0f);
@@ -44,16 +43,11 @@ public class PlayerController : MonoBehaviour
         aimLine.enabled = false;
 		Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit floorHit;
-        if(Physics.Raycast(camRay,out floorHit,CAM_RAY_LENGTH,clickableArea))
+        if(Physics.Raycast(camRay,out floorHit,CAM_RAY_LENGTH,clickableArea) && rb.velocity.magnitude<0.1f)
         {
             Vector3 directionVector = floorHit.point - transform.position;
             rb.velocity = directionVector.normalized*speed;
-            fg.setGravity(directionVector.normalized);
+            fg.setGravity(new Vector3(0,0,0));
         }
-    }
-
-    void Update()
-    {
-        rb.velocity += fakeGravity*speed*0.1f;
     }
 }
