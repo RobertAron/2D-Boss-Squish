@@ -9,7 +9,6 @@ public class PlayerController : MonoBehaviour
     public float speed = 1f;
 
     private Rigidbody rb;
-    private Vector2 rest = new Vector2(0f,0f);
     private Vector2 curentVelocityRef;
     private FakeGravity fg;
 

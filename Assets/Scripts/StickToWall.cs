@@ -5,12 +5,10 @@ using UnityEngine;
 public class StickToWall : MonoBehaviour
 {
 
-    Rigidbody rb;
     private FakeGravity fg;
     // Use this for initialization
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
         fg = GetComponent<FakeGravity>();
     }
     void OnCollisionEnter(Collision other)

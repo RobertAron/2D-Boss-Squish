@@ -16,7 +16,6 @@ public class Watching : MonoBehaviour {
 		Vector3 normalDireciton = new Vector3(0,1,0);
 		// float zPostion = Vector3.Angle(normalDireciton,watchieAngle);
 		float zPostion = Quaternion.FromToRotation(normalDireciton, watchieAngle).eulerAngles.z;
-		Debug.Log(zPostion);
 		transform.rotation = Quaternion.Euler(0,0,zPostion);
 	}
 }
