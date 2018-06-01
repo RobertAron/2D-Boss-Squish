@@ -92,7 +92,9 @@
      <Compile Include="Assets\Deform\Plugins\AsyncAwaitUtil\Source\TaskExtensions.cs" />
      <Compile Include="Assets\Deform\Plugins\AsyncAwaitUtil\Source\WaitForBackgroundThread.cs" />
      <Compile Include="Assets\Deform\Plugins\AsyncAwaitUtil\Source\WaitForUpdate.cs" />
+     <Compile Include="Assets\Scripts\BossController.cs" />
      <Compile Include="Assets\Scripts\BossStruck.cs" />
+     <Compile Include="Assets\Scripts\DefenseMove.cs" />
      <Compile Include="Assets\Scripts\DefenseOrbMovement.cs" />
      <Compile Include="Assets\Scripts\FakeGravity.cs" />
      <Compile Include="Assets\Scripts\Force2D.cs" />
