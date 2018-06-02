@@ -95,7 +95,9 @@
      <Compile Include="Assets\Scripts\BossController.cs" />
      <Compile Include="Assets\Scripts\BossStruck.cs" />
      <Compile Include="Assets\Scripts\DefenseMove.cs" />
+     <Compile Include="Assets\Scripts\DefenseMoveController.cs" />
      <Compile Include="Assets\Scripts\DefenseOrbMovement.cs" />
+     <Compile Include="Assets\Scripts\DefenseOrbMovement2.cs" />
      <Compile Include="Assets\Scripts\FakeGravity.cs" />
      <Compile Include="Assets\Scripts\Force2D.cs" />
      <Compile Include="Assets\Scripts\ForceConstantOrientation.cs" />
