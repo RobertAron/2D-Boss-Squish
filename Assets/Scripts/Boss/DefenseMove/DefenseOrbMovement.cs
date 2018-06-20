@@ -21,7 +21,6 @@ public class DefenseOrbMovement : MonoBehaviour {
 		{
 			timePassed+=Time.fixedDeltaTime;
 			transform.localPosition = Vector3.Lerp(startingPosition, fullLengthPosition, timePassed / timeToInitialLocation);
-			Debug.Log(transform.localPosition);
 			yield return new WaitForFixedUpdate();
 		}
 		while(timePassed<timeTillBeginFade)
