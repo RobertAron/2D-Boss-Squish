@@ -19,15 +19,19 @@ public class SplitOnCollision : MonoBehaviour {
 	private void OnCollisionEnter(Collision other) {
 		if(other.gameObject.CompareTag("Wall")){
 			Debug.Log("attempting split");
+			Debug.Log("normal "+ other.contacts[0].normal);
 			Vector3 splitRotation1 = Quaternion.Euler(0, 0, 90) * other.contacts[0].normal;
-			Vector3 splitRotation2 = Quaternion.Euler(0, 0, -90) * other.contacts[0].normal;
-			Debug.Log(splitRotation1);
-			Debug.Log(splitRotation2);
-			splitStuckBullet1.transform.position = transform.position + other.contacts[0].normal * wallSepeartion;
-			splitStuckBullet1.transform.rotation = Quaternion.LookRotation(splitRotation1);
+			Vector3 splitRotation2 = Quaternion.Euler(0,0, -90) * other.contacts[0].normal;
+			Vector3 splitRotation1Z = new Vector3(0,0, Mathf.Atan2(splitRotation1.x, splitRotation1.y) * Mathf.Rad2Deg);
+			Vector3 splitRotation2Z = new Vector3(0,0, Mathf.Atan2(splitRotation2.x, splitRotation2.y) * Mathf.Rad2Deg);
+
+
+			splitStuckBullet1.transform.position = transform.position;
+			splitStuckBullet1.transform.rotation = Quaternion.Euler(splitRotation1Z);
 			splitStuckBullet1.SetActive(true);
-			splitStuckBullet2.transform.position = transform.position + other.contacts[0].normal * wallSepeartion;
-			splitStuckBullet2.transform.rotation = Quaternion.LookRotation(splitRotation2);
+
+			splitStuckBullet2.transform.position = transform.position;
+			splitStuckBullet2.transform.rotation = Quaternion.Euler(splitRotation2Z);
 			splitStuckBullet2.SetActive(true);
 		};
 	}
